@@ -12,7 +12,6 @@ class Settings(BaseSettings):
     """Application settings class."""
     ip_address: str
     ip_port: int
-    # database_url: str
     debug: bool = False
     root_path: str = ""
     postgres_db: str
