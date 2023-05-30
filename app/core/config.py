@@ -10,15 +10,21 @@ ENV_FILE = os.path.join(BASE_DIR / ".env")
 
 class Settings(BaseSettings):
     """Application settings class."""
+    # Hosting settings
     ip_address: str
     ip_port: int
-    debug: bool = False
-    root_path: str = ""
+
+    # Database settings
     postgres_db: str
     postgres_user: str
     postgres_password: str
     db_host: str
     db_port: str
+
+    # Application settings
+    title = "Quiz questions service."
+    root_path: str = ""
+    debug: bool = False
 
     @property
     def database_url(self) -> str:

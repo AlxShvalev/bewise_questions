@@ -6,7 +6,11 @@ from app.core.config import settings
 
 def create_app() -> FastAPI:
     """Create FastAPI application"""
-    app = FastAPI(debug=settings.debug, root_path=settings.root_path)
+    app = FastAPI(
+        title=settings.title,
+        debug=settings.debug,
+        root_path=settings.root_path
+    )
 
     app.include_router(questions_router)
 
